@@ -1,5 +1,5 @@
 ## Frequency-Temporal Attention Network for Remote Sensing Imagery Change Detection 
-> [Frequency-Temporal Attention Network for Change Detection](https://arxiv.org/abs/2201.01293)
+> [Frequency-Temporal Attention Network for Change Detection](https://ieeexplore.ieee.org/document/10713423)
 
 > Presented at [GRSL-24](https://www.grss-ieee.org/publications/geoscience-and-remote-sensing-letters/)
 

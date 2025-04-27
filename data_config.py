@@ -7,7 +7,7 @@ class DataConfig:
         self.data_name = data_name
         if data_name == 'LEVIR':
             self.label_transform = "norm"
-            self.root_dir = '/mnt/nfs/data/LEVIR-CD-256'
+            self.root_dir = '/home/ubuntu/FTAN/LEVIR-CD256-tmp'
         elif data_name == 'DSIFN':
             self.label_transform = "norm"
             self.root_dir = '/mnt/nfs/data/DSIFN-CD-256'

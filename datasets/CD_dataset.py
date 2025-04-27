@@ -8,7 +8,7 @@ import numpy as np
 
 from torch.utils import data
 
-from datasets.data_utils import CDDataAugmentation
+from .data_utils import CDDataAugmentation
 
 
 """
@@ -28,7 +28,7 @@ IGNORE = 255
 label_suffix='.png' # jpg for gan dataset, others : png
 
 def load_img_name_list(dataset_path):
-    img_name_list = np.loadtxt(dataset_path, dtype=np.str)
+    img_name_list = np.loadtxt(dataset_path, dtype=str)
     if img_name_list.ndim == 2:
         return img_name_list[:, 0]
     return img_name_list
@@ -104,11 +104,11 @@ class CDDataset(ImageDataset):
 
     def __getitem__(self, index):
         name = self.img_name_list[index]
-        A_path = get_img_path(self.root_dir, self.img_name_list[index % self.A_size])
-        B_path = get_img_post_path(self.root_dir, self.img_name_list[index % self.A_size])
+        A_path = get_img_path(os.path.join(self.root_dir,self.split), self.img_name_list[index % self.A_size]+label_suffix)
+        B_path = get_img_post_path(os.path.join(self.root_dir,self.split), self.img_name_list[index % self.A_size]+label_suffix)
         img = np.asarray(Image.open(A_path).convert('RGB'))
         img_B = np.asarray(Image.open(B_path).convert('RGB'))
-        L_path = get_label_path(self.root_dir, self.img_name_list[index % self.A_size])
+        L_path = get_label_path(os.path.join(self.root_dir,self.split), self.img_name_list[index % self.A_size]+label_suffix)
 
         label = np.array(Image.open(L_path), dtype=np.uint8)
         # if you are getting error because of dim mismatch ad [:,:,0] at the end

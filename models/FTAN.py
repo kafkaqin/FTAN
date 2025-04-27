@@ -1017,8 +1017,8 @@ class ChangeNextV3(nn.Module):
 
     def forward(self, x1, x2):
         [fx1, fx2] = [self.Tenc_x2(x1), self.Tenc_x2(x2)]
-        # for i in range(4):
-        #     print(fx1[i].shape)
+        for i in range(4):
+            print(fx1[i].shape)
 
         cp = self.Decode(fx1, fx2)
 

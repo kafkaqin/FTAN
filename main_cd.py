@@ -9,7 +9,7 @@ print(torch.cuda.is_available())
 """
 the main function for training the CD networks
 """
-
+# torch.backends.cudnn.benchmark = True
 
 def setup_seed(seed):
     torch.manual_seed(seed)
@@ -51,12 +51,12 @@ if __name__ == '__main__':
     parser.add_argument('--vis_root', default='vis', type=str)
 
     # data
-    parser.add_argument('--num_workers', default=2, type=int)
+    # parser.add_argument('--num_workers', default=2, type=int)
     parser.add_argument('--dataset', default='CDDataset', type=str)
     parser.add_argument('--data_name', default='LEVIR', type=str)
 
-    parser.add_argument('--batch_size', default=32, type=int)
-    # parser.add_argument('--num_workers', default=0, type=int)
+    parser.add_argument('--batch_size', default=1, type=int)
+    parser.add_argument('--num_workers', default=0, type=int)
     # parser.add_argument('--pin_memory', default=False, type=str)
 
     parser.add_argument('--split', default="train", type=str)
@@ -82,7 +82,7 @@ if __name__ == '__main__':
     # optimizer
     parser.add_argument('--optimizer', default='adamw', type=str)
     parser.add_argument('--lr', default=0.0001, type=float,help='0.00006|0.0001')
-    parser.add_argument('--max_epochs', default=500, type=int)
+    parser.add_argument('--max_epochs', default=2, type=int)
     parser.add_argument('--lr_policy', default='linear', type=str,
                         help='linear | step')
     parser.add_argument('--lr_decay_iters', default=100, type=int)

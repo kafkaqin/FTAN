@@ -21,7 +21,7 @@ class DataConfig:
             self.label_transform = "norm"
             self.root_dir = '/media/lidan/ssd2/CDData/TYPO/'
         elif data_name == 'quick_start_LEVIR':
-            self.root_dir = './samples_LEVIR/'
+            self.root_dir = '/home/ubuntu/FTAN/LEVIR-CD256-tmp'
         elif data_name == 'quick_start_DSIFN':
             self.root_dir = '/mnt/nfs/data/DSIFN-CD-256'
         else:

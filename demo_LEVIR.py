@@ -24,7 +24,7 @@ def get_args():
     #parser.add_argument('--project_name', default='CD_ChangeFormerV6_LEVIR_b16_lr0.0001_adamw_train_test_200_linear_ce_multi_train_True_multi_infer_False_shuffle_AB_False_embed_dim_256', type=str)
     parser.add_argument('--project_name', default='newChangeNextLE_pw', type=str)
     parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
-    parser.add_argument('--checkpoint_root', default='/tmp/pycharm_project_38/checkpoints/', type=str)
+    parser.add_argument('--checkpoint_root', default='/home/ubuntu/FTAN/checkpoints/newChangeNextV3LE_3/', type=str)
     parser.add_argument('--output_folder', default='samples_LEVIR/newChangeNextLE_pw', type=str)
 
     # data
@@ -41,7 +41,7 @@ def get_args():
     parser.add_argument('--embed_dim', default=256, type=int)
     parser.add_argument('--net_G', default='ChangeNext_Decoder', type=str,
                         help='ChangeFormerV6 | CD_SiamUnet_diff | SiamUnet_conc | Unet | DTCDSCN | base_resnet18 | base_transformer_pos_s4_dd8 | base_transformer_pos_s4_dd8_dedim8|')
-    parser.add_argument('--checkpoint_name', default='best_ckpt.pt', type=str)
+    parser.add_argument('--checkpoint_name', default='/home/ubuntu/FTAN/checkpoints/newChangeNextV3LE_3/best_ckpt.pt', type=str)
 
     args = parser.parse_args()
     return args

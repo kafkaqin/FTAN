@@ -69,7 +69,7 @@ class CDEvaluator():
         name = self.batch['name']
         for i, pred in enumerate(preds):
             file_name = os.path.join(
-                self.pred_dir, name[i].replace('.jpg', '.png'))
+                self.pred_dir, name[i]+".png")
             pred = pred[0].cpu().numpy()
             save_image(pred, file_name)
 
